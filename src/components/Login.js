@@ -16,7 +16,6 @@ const Login = () => {
     const handleSubmit = async () => {
         setError(false);
         try {
-            array(_user);
             const requestToken = await API.getRequestToken();
             const sessionId = await API.authenticate(
                 requestToken,
@@ -30,6 +29,7 @@ const Login = () => {
             setError(true);
         };
     };
+    console.log(_user);
     const handleInput = e => {
         const name = e.currentTarget.name;
         const value = e.currentTarget.value;
